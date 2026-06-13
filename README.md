@@ -38,7 +38,7 @@
 
 You can download the latest beta APK from GitHub Releases:
 
-#### [👉 Click to Download NeoGauge-beta.apk](https://github.com/Jianli03/NeoGauge/releases/download/v0.8.0/NeoGauge-beta.apk)
+#### [👉 Click to Download NeoGauge-beta.apk](https://github.com/Jianli03/NeoGauge/releases/download/v0.9.1/NeoGauge-beta.apk)
 
 *Note: Please ensure your Android version is 10.0 (API 29) or higher, and grant location permissions after installation.*
 
