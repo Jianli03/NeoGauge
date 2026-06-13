@@ -2,5 +2,5 @@
   "versionCode": 3,
   "versionName": "0.9.1-test",
   "updateNotes": "OTA 测试：\n1. 验证更新对话框弹出\n2. 验证下载链接跳转",
-  "downloadUrl": "https://github.com/Jianli03/NeoGauge/releases"
+  "downloadUrl": "https://github.com/Jianli03/NeoGauge/releases/download/v0.9.1/NeoGauge-beta.apk"
 }
