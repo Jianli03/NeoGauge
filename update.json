@@ -1,6 +1,6 @@
 {
   "versionCode": 3,
   "versionName": "0.9.2",
-  "updateNotes": "NEW UI and algorithms  测试：\n1. add Themes \n2. improved GSP algorithms",
+  "updateNotes": "1. 新增 10 种名表系列配色主题\n2. 优化物理级低通滤波，指针移动更丝滑\n3. 优化平均时速算法，剔除静止等待时间\n4. 提升 GPS 信号容错率至 150m\n5. 新增 GPS 信号丢失保护机制，防止隧道及切换主题时掉速",
   "downloadUrl": "https://github.com/Jianli03/NeoGauge/releases/download/v0.9.2/NeoGauge-beta.apk"
 }
