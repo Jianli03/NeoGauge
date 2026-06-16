@@ -1,7 +1,7 @@
 # NEOGAUGE - Retro-Futuristic Speedometer
 
 [![Platform](https://img.shields.io/badge/Platform-Android-green.svg)](https://www.android.com)
-[![Version](https://img.shields.io/badge/Version-0.9.0--beta-purple.svg)](#download)
+[![Version](https://img.shields.io/badge/Version-0.9.2-purple.svg)](#download)
 [![Privacy](https://img.shields.io/badge/Privacy-No--Ads%20%7C%20No--Tracking-blue.svg)](privacy.html)
 
 [English](#english) | [中文](#中文)
@@ -38,7 +38,7 @@
 
 You can download the latest beta APK from GitHub Releases:
 
-#### [👉 Click to Download NeoGauge-beta.apk](https://github.com/Jianli03/NeoGauge/releases/download/v0.8.0/NeoGauge-beta.apk)
+#### [👉 Click to Download NeoGauge-beta.apk](https://github.com/Jianli03/NeoGauge/releases/download/v0.9.2/NeoGauge-beta.apk)
 
 *Note: Please ensure your Android version is 10.0 (API 29) or higher, and grant location permissions after installation.*
 
@@ -74,7 +74,7 @@ You can download the latest beta APK from GitHub Releases:
 
 您可以从 GitHub Releases 下载最新的测试版 APK：
 
-#### [👉 点击下载 NeoGauge-beta.apk](https://github.com/Jianli03/NeoGauge/releases/download/v0.8.0/NeoGauge-beta.apk)
+#### [👉 点击下载 NeoGauge-beta.apk](https://github.com/Jianli03/NeoGauge/releases/download/v0.9.2/NeoGauge-beta.apk)
 
 *注意：安装前请确保您的 Android 系统版本为 10.0 (API 29) 或更高，并在安装后授予位置权限。*
 
