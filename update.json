@@ -1,6 +1,6 @@
 {
   "versionCode": 3,
-  "versionName": "0.9.1-test",
-  "updateNotes": "OTA 测试：\n1. 验证更新对话框弹出\n2. 验证下载链接跳转",
-  "downloadUrl": "https://github.com/Jianli03/NeoGauge/releases/download/v0.9.1/NeoGauge-beta.apk"
+  "versionName": "0.9.2",
+  "updateNotes": "NEW UI and algorithms  测试：\n1. add Themes \n2. improved GSP algorithms",
+  "downloadUrl": "https://github.com/Jianli03/NeoGauge/releases/download/v0.9.2/NeoGauge-beta.apk"
 }
