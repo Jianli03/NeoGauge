@@ -45,7 +45,7 @@ clear speed, balanced layout, and minimal distraction.
 - **Day and night palettes** — suitable contrast for changing light conditions.
 - **Portrait and landscape layouts** — designed for different mounts and screens.
 - **Phone and tablet support** — adaptive spacing keeps the dashboard balanced.
-- **Real-road refinement** — tested during everyday driving in Melbourne.
+- **Real-road refinement** — tested and improved through everyday driving.
 
 ## Journey memories
 
@@ -124,7 +124,7 @@ NeoGauge 是一款复古未来主义 Android 驾驶伙伴。它将实时驾驶�
 - **日夜配色**——适应不断变化的光线环境。
 - **横竖屏布局**——适合不同支架和使用方向。
 - **手机和平板适配**——动态间距让不同屏幕保持视觉平衡。
-- **真实道路打磨**——在墨尔本的日常驾驶中持续测试和改进。
+- **真实道路打磨**——在日常驾驶中持续测试和改进。
 
 ## Journey 旅程记忆
 
