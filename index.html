@@ -48,7 +48,11 @@
             font-family: "Space Grotesk", sans-serif;
         }
 
-        [data-lang="zh"] {
+        html:not([lang^="zh"]) [data-lang="zh"] {
+            display: none;
+        }
+
+        html[lang^="zh"] [data-lang="en"] {
             display: none;
         }
 
@@ -795,10 +799,6 @@
         function setLanguage(nextLanguage) {
             language = nextLanguage === "zh" ? "zh" : "en";
             document.documentElement.lang = language === "zh" ? "zh-CN" : "en";
-
-            document.querySelectorAll("[data-lang]").forEach((element) => {
-                element.style.display = element.dataset.lang === language ? "" : "none";
-            });
 
             localStorage.setItem("neoGaugeLang", language);
         }
