@@ -3,420 +3,885 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="NeoGauge turns your Android phone into a clear, expressive driving dashboard with four distinctive themes, private on-device journeys, and no ads or tracking."
+    >
+    <meta property="og:title" content="NeoGauge — Make every drive feel different">
+    <meta
+        property="og:description"
+        content="Four distinctive dashboards. Clear GPS speed. Private journey memories. No ads, tracking, or data collection."
+    >
+    <meta
+        property="og:image"
+        content="https://jianli03.github.io/NeoGauge/img/v1/hero/classic.png"
+    >
+    <meta property="og:url" content="https://jianli03.github.io/NeoGauge/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NeoGauge">
+    <meta name="twitter:card" content="summary_large_image">
 
-    <meta property="og:title" content="NeoGauge - Retro-Futuristic Speedometer" />
-    <meta property="og:description" content="NeoGauge 机械美学速度仪表 - 有温度的陪伴。 无告，无追踪。" />
-    <meta property="og:image" content="https://jianli03.github.io/NeoGauge/img/preview.png" />
-    <meta property="og:url" content="https://jianli03.github.io/NeoGauge" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="NeoGauge app官网" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-
-    <title>NeoGauge - Retro-Futuristic Speedometer</title>
+    <title>NeoGauge — A warmer digital dashboard for Android</title>
     <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Space Grotesk', sans-serif; background-color: #0a0e14; color: #e2e8f0; scroll-behavior: smooth; }
-        .neon-text { text-shadow: 0 0 10px #6750A4, 0 0 20px #6750A4; }
-        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); }
-        .hero-bg { background: radial-gradient(circle at 50% 50%, #1a1f2e 0%, #0a0e14 100%); }
-        [data-lang="zh"] { display: none; }
+        :root {
+            color-scheme: dark;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background:
+                radial-gradient(circle at 50% -10%, rgba(108, 72, 195, 0.22), transparent 34rem),
+                #090b10;
+            color: #e7e9ef;
+            font-family: "Space Grotesk", sans-serif;
+        }
+
+        [data-lang="zh"] {
+            display: none;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.045);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            backdrop-filter: blur(18px);
+        }
+
+        .eyebrow {
+            color: #b8a4ff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        .headline-glow {
+            text-shadow: 0 0 28px rgba(255, 72, 85, 0.28);
+        }
+
+        .section-rule {
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .theme-card img {
+            transition: transform 500ms ease;
+        }
+
+        .theme-card:hover img {
+            transform: scale(1.025);
+        }
+
+        .focus-ring:focus-visible {
+            outline: 2px solid #b8a4ff;
+            outline-offset: 4px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
     </style>
 </head>
 <body class="antialiased">
+    <nav
+        class="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-[#090b10]/80 backdrop-blur-xl"
+        aria-label="Primary navigation"
+    >
+        <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 md:px-8">
+            <a
+                href="#top"
+                class="focus-ring text-lg font-bold tracking-tight text-white"
+                aria-label="NeoGauge home"
+            >
+                NEO<span class="text-red-500">GAUGE</span>
+            </a>
 
-    <!-- Language Switcher -->
-    <nav class="fixed top-6 right-6 z-50 flex gap-2">
-        <button onclick="setLanguage('en')" class="glass px-4 py-2 rounded-full flex items-center gap-2 hover:bg-white/10 transition-all text-sm font-medium border-purple-500/30 border">
-            <span>🇺🇸</span> English
-        </button>
-        <button onclick="setLanguage('zh')" class="glass px-4 py-2 rounded-full flex items-center gap-2 hover:bg-white/10 transition-all text-sm font-medium border-purple-500/30 border">
-            <span>🇨🇳</span> 中文
-        </button>
+            <div class="hidden items-center gap-7 text-sm text-slate-300 md:flex">
+                <a href="#themes" class="focus-ring transition hover:text-white">
+                    <span data-lang="en">Themes</span>
+                    <span data-lang="zh">主题</span>
+                </a>
+                <a href="#journeys" class="focus-ring transition hover:text-white">
+                    <span data-lang="en">Journeys</span>
+                    <span data-lang="zh">旅程</span>
+                </a>
+                <a href="#privacy" class="focus-ring transition hover:text-white">
+                    <span data-lang="en">Privacy</span>
+                    <span data-lang="zh">隐私</span>
+                </a>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <button
+                    id="language-button"
+                    type="button"
+                    class="focus-ring glass rounded-full px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10"
+                    aria-label="Switch language"
+                >
+                    <span data-lang="en">中文</span>
+                    <span data-lang="zh">English</span>
+                </button>
+                <a
+                    href="download/"
+                    class="focus-ring hidden rounded-full bg-white px-5 py-2 text-sm font-bold text-black transition hover:bg-slate-200 sm:inline-block"
+                >
+                    <span data-lang="en">Download</span>
+                    <span data-lang="zh">下载</span>
+                </a>
+            </div>
+        </div>
     </nav>
 
-    <!-- Section 1: Hero -->
-    <header class="relative min-h-screen flex flex-col items-center justify-center text-center px-4 hero-bg overflow-hidden">
-        <div class="absolute inset-0 overflow-hidden opacity-20 pointer-events-none">
-            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-purple-900 rounded-full blur-[120px]"></div>
-        </div>
+    <main id="top">
+        <header class="relative overflow-hidden px-5 pb-20 pt-32 text-center md:px-8 md:pb-28 md:pt-40">
+            <div
+                class="pointer-events-none absolute left-1/2 top-24 h-80 w-80 -translate-x-1/2 rounded-full bg-purple-600/20 blur-[110px]"
+                aria-hidden="true"
+            ></div>
 
-        <div class="relative z-10 mt-12">
-            <h1 class="text-6xl md:text-8xl font-bold mb-4 tracking-tighter">NEO<span class="text-red-500 neon-text">GAUGE</span></h1>
-
-            <!-- Catchphrase -->
-            <div data-lang="en">
-                <p class="text-2xl md:text-3xl font-bold text-white mb-2 tracking-tight">Retro Digital Speedometer for Android</p>
-                <p class="text-lg md:text-xl font-medium text-purple-400 mb-6 uppercase tracking-[0.2em]">No Ads. No Tracking. No Data Collection.</p>
-                <p class="text-lg md:text-xl font-light text-slate-400 mb-10 max-w-2xl mx-auto">
-                    A high-performance tool blending <span class="text-white">mechanical aesthetics</span> with <span class="text-white">modern Sci-Fi design</span>.
+            <div class="relative mx-auto max-w-5xl">
+                <p class="eyebrow mb-5">
+                    <span data-lang="en">A driving companion for Android</span>
+                    <span data-lang="zh">Android 驾驶伙伴</span>
                 </p>
-            </div>
-            <div data-lang="zh">
-                <p class="text-2xl md:text-3xl font-bold text-white mb-2 tracking-tight">复古机械美学速度计</p>
-                <p class="text-lg md:text-xl font-medium text-purple-400 mb-6 uppercase tracking-[0.2em]">无广告 · 无追踪 · 无数据收集</p>
-                <p class="text-lg md:text-xl font-light text-slate-400 mb-10 max-w-2xl mx-auto">
-                    融合 <span class="text-white">机械美学</span> 与 <span class="text-white">现代科技</span> 结合的高性能驾驶工具。
+
+                <h1
+                    data-lang="en"
+                    class="headline-glow text-5xl font-bold leading-[1.02] tracking-[-0.05em] text-white md:text-7xl lg:text-8xl"
+                >
+                    Make every drive<br>
+                    <span class="text-red-500">feel different.</span>
+                </h1>
+                <h1
+                    data-lang="zh"
+                    class="headline-glow text-5xl font-bold leading-[1.08] tracking-[-0.05em] text-white md:text-7xl lg:text-8xl"
+                >
+                    让每一次驾驶<br>
+                    <span class="text-red-500">都有不一样的感觉。</span>
+                </h1>
+
+                <p
+                    data-lang="en"
+                    class="mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-slate-300 md:text-xl"
+                >
+                    NeoGauge turns live driving data into a clear, expressive digital dashboard —
+                    with four distinctive themes and quiet journey memories that stay on your device.
                 </p>
-            </div>
+                <p
+                    data-lang="zh"
+                    class="mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-slate-300 md:text-xl"
+                >
+                    NeoGauge 将实时驾驶数据变成清晰而有个性的数字仪表，
+                    以四种独特主题陪你上路，并在设备本地安静地留住每段旅程。
+                </p>
 
-            <div class="flex gap-4 justify-center mb-16">
-                <a href="download/" data-lang="en" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 px-8 rounded-full transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(147,51,234,0.3)]">
-                    Download Beta APK
-                </a>
-                <a href="download/" data-lang="zh" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 px-8 rounded-full transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(147,51,234,0.3)]">
-                    下载安卓测试版
-                </a>
-                <a href="https://github.com/Jianli03/NeoGauge" data-lang="en" class="glass text-white font-medium py-4 px-8 rounded-full hover:bg-white/10 transition-all">
-                    GitHub Source
-                </a>
-                <a href="https://github.com/Jianli03/NeoGauge" data-lang="zh" class="glass text-white font-medium py-4 px-8 rounded-full hover:bg-white/10 transition-all">
-                    GitHub 源码
-                </a>
-            </div>
-        </div>
+                <p class="mt-5 text-sm font-semibold uppercase tracking-[0.16em] text-slate-500">
+                    <span data-lang="en">No ads · No tracking · No data collection</span>
+                    <span data-lang="zh">无广告 · 无追踪 · 无数据收集</span>
+                </p>
 
-        <!-- Scenario Image Container -->
-        <div class="relative w-full max-w-4xl mx-auto px-4 mt-8">
-            <div class="absolute -inset-1 bg-gradient-to-t from-purple-600/20 to-transparent blur-3xl"></div>
-            <div class="relative glass rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/10 transform perspective-1000 rotate-x-2">
-                <img src="img/hero_scenario.jpg" alt="NeoGauge Scenario" class="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity duration-700">
-                <div class="absolute inset-0 bg-gradient-to-t from-[#0a0e14] via-transparent to-transparent opacity-40 pointer-events-none"></div>
-            </div>
-        </div>
-
-        <div class="mt-12 animate-bounce text-slate-500">
-            <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
-        </div>
-    </header>
-
-    <!-- Section 2: Mechanical Soul -->
-    <section class="py-24 px-6 max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-        <div>
-            <h2 data-lang="en" class="text-4xl font-bold mb-6">Mechanical <span class="text-purple-500">Soul</span></h2>
-            <h2 data-lang="zh" class="text-4xl font-bold mb-6">机械 <span class="text-purple-500">灵魂</span></h2>
-
-            <p data-lang="en" class="text-lg text-slate-400 leading-relaxed">
-                Experience the tactile beauty of a meticulously crafted 5-digit rolling odometer. Our logic replicates real physical gears, where fractional units pull the higher digits in a cascading motion. Precision at 0.1km, just like a classic motorcycle gauge.
-            </p>
-            <p data-lang="zh" class="text-lg text-slate-400 leading-relaxed">
-                体验精心打造的5位滚动里程表的触感之美。我们的逻辑模拟了真实物理齿轮，小数点单位会像经典摩托车表盘一样级联带动高位数字。精确到 0.1km。
-            </p>
-
-            <ul data-lang="en" class="mt-6 space-y-3 text-slate-300">
-                <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-purple-500 rounded-full"></div> 0000.0 physical rolling logic</li>
-                <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-purple-500 rounded-full"></div> Fractional digit highlighted in Racing Red</li>
-                <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-purple-500 rounded-full"></div> Vintage metallic reset pin interaction</li>
-            </ul>
-            <ul data-lang="zh" class="mt-6 space-y-3 text-slate-300">
-                <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-purple-500 rounded-full"></div> 0000.0 物理滚动逻辑</li>
-                <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-purple-500 rounded-full"></div> 小数位采用赛车红高亮</li>
-                <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-purple-500 rounded-full"></div> 复古金属复位销交互</li>
-            </ul>
-        </div>
-        <div class="glass rounded-3xl overflow-hidden shadow-2xl">
-            <img src="img/Odometer%20Close-up%20Screenshot.png" alt="Odometer close-up" class="w-full h-auto">
-        </div>
-    </section>
-
-    <!-- New Section: Real-World Road Test -->
-    <section class="py-24 px-6 max-w-6xl mx-auto flex flex-col md:flex-row gap-16 items-center">
-        <div class="flex-1 order-1">
-            <h2 data-lang="en" class="text-4xl font-bold mb-6 text-white">Real-World <span class="text-purple-500">Road Test</span></h2>
-            <h2 data-lang="zh" class="text-4xl font-bold mb-6 text-white">实车 <span class="text-purple-500">道路测试</span></h2>
-
-            <p data-lang="en" class="text-lg text-slate-400 leading-relaxed mb-8">
-                Tested on actual highways to ensure real-time accuracy and low-latency response. NeoGauge remains stable and readable even under high-speed vibration and changing light conditions.
-            </p>
-            <p data-lang="zh" class="text-lg text-slate-400 leading-relaxed mb-8">
-                经过实际高速公路测试，确保实时精度和低延迟响应。即使在高频振动和光线变化的环境下，NeoGauge 依然稳定清晰。
-            </p>
-
-            <div class="rounded-3xl overflow-hidden glass border border-white/10 group shadow-2xl text-left">
-                <video autoplay loop muted playsinline class="w-full h-auto block" poster="img/nightphone.jpg">
-                    <source src="img/roadtest.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-
-                <div class="p-6">
-                    <span data-lang="en" class="text-xs uppercase tracking-widest text-purple-400 font-bold">Hardware Verification</span>
-                    <span data-lang="zh" class="text-xs uppercase tracking-widest text-purple-400 font-bold">硬件验证</span>
-
-                    <h3 data-lang="en" class="text-xl font-bold mt-2">Active Field Testing</h3>
-                    <h3 data-lang="zh" class="text-xl font-bold mt-2">现场实地测试</h3>
+                <div class="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
+                    <a
+                        href="download/"
+                        class="focus-ring rounded-full bg-purple-600 px-8 py-4 font-bold text-white shadow-[0_0_36px_rgba(124,78,214,0.32)] transition hover:bg-purple-500"
+                    >
+                        <span data-lang="en">Download Android beta</span>
+                        <span data-lang="zh">下载 Android 测试版</span>
+                    </a>
+                    <a
+                        href="#themes"
+                        class="focus-ring glass rounded-full px-8 py-4 font-bold text-white transition hover:bg-white/10"
+                    >
+                        <span data-lang="en">Explore the dashboards</span>
+                        <span data-lang="zh">探索四种仪表</span>
+                    </a>
                 </div>
             </div>
-        </div>
-        <div class="flex-1 order-2 w-full">
-            <div class="relative group">
-                <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-red-600 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-                <div class="relative glass rounded-[2rem] overflow-hidden shadow-2xl">
-                    <img src="img/roadtest.jpg" alt="NeoGauge on road" class="w-full h-[600px] object-cover opacity-80 group-hover:opacity-100 transition-opacity">
-                </div>
-            </div>
-            <p class="text-center mt-6 text-sm text-slate-500 italic flex items-center justify-center gap-2">
-                <span class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
-                <span data-lang="en">Actual highway road test footage</span>
-                <span data-lang="zh">实际高速路测片段</span>
-            </p>
-        </div>
-    </section>
 
-    <!-- Section 3: Neon Drive -->
-    <section class="py-24 bg-black/30">
-        <div class="max-w-6xl mx-auto px-6 text-center">
-            <h2 data-lang="en" class="text-4xl font-bold mb-16">Day/Night Mode: <span class="text-red-500 neon-text">Neon Glow</span></h2>
-            <h2 data-lang="zh" class="text-4xl font-bold mb-16">日夜模式：<span class="text-red-500 neon-text">霓虹幻彩</span></h2>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="glass p-4 rounded-3xl">
-                    <p data-lang="en" class="mb-4 font-medium">Day Mode: High Contrast</p>
-                    <p data-lang="zh" class="mb-4 font-medium">日间模式：高对比度</p>
-                    <div class="aspect-[9/16] overflow-hidden rounded-2xl">
-                        <img src="img/Day Mode Screenshot.png" alt="Day Mode" class="w-full h-auto">
-                    </div>
-                </div>
-                <div class="glass p-4 rounded-3xl bg-slate-900/50">
-                    <p data-lang="en" class="mb-4 font-medium">Night Mode: Cyberpunk Aesthetic</p>
-                    <p data-lang="zh" class="mb-4 font-medium">夜间模式：赛博朋克美学</p>
-                    <div class="aspect-[9/16] overflow-hidden rounded-2xl border border-red-500/20">
-                        <img src="img/Night Mode Neon Screenshot (2).png" alt="Night Mode" class="w-full h-auto">
+            <div class="relative mx-auto mt-14 max-w-5xl md:mt-20">
+                <div
+                    class="absolute inset-x-12 bottom-0 h-32 bg-purple-600/20 blur-[80px]"
+                    aria-hidden="true"
+                ></div>
+                <div
+                    id="hero-carousel"
+                    class="glass relative overflow-hidden rounded-3xl shadow-2xl md:rounded-[2.5rem]"
+                >
+                    <img
+                        id="hero-image"
+                        src="img/v1/hero/classic.png"
+                        alt="NeoGauge Classic dashboard"
+                        class="aspect-[16/9] w-full object-cover transition-opacity duration-500"
+                    >
+                    <div
+                        class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"
+                    ></div>
+                    <div
+                        class="absolute bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-3 rounded-full bg-black/55 px-4 py-2 backdrop-blur-md"
+                    >
+                        <span
+                            id="hero-label"
+                            class="text-xs font-bold uppercase tracking-[0.16em] text-white"
+                        >
+                            Classic
+                        </span>
+                        <div
+                            id="hero-dots"
+                            class="flex gap-2"
+                            aria-label="Choose dashboard theme"
+                        ></div>
                     </div>
                 </div>
             </div>
-            <p data-lang="en" class="mt-12 text-slate-400 max-w-3xl mx-auto">
-                Our dynamic motion blur trail and multi-layered bloom effect on digital segments provide an immersive driving experience without straining your eyes during night rides.
-            </p>
-            <p data-lang="zh" class="mt-12 text-slate-400 max-w-3xl mx-auto">
-                动态模糊拖尾和多层光晕效果，为您提供身临其境的驾驶体验，同时确保夜间骑行不伤眼。
-            </p>
-        </div>
-    </section>
+        </header>
 
-    <!-- Section: Luxury Themes -->
-    <section class="py-24 px-6 max-w-7xl mx-auto text-center">
-        <h2 data-lang="en" class="text-4xl font-bold mb-6">Exquisite <span class="text-purple-500">Themes</span></h2>
-        <h2 data-lang="zh" class="text-4xl font-bold mb-6">精选 <span class="text-purple-500">主题</span></h2>
+        <section id="themes" class="section-rule px-5 py-24 md:px-8 md:py-32">
+            <div class="mx-auto max-w-7xl">
+                <div class="mx-auto max-w-3xl text-center">
+                    <p class="eyebrow mb-4">
+                        <span data-lang="en">Four dashboards. One experience.</span>
+                        <span data-lang="zh">四种仪表，一种专注体验</span>
+                    </p>
+                    <h2
+                        data-lang="en"
+                        class="text-4xl font-bold tracking-[-0.04em] text-white md:text-6xl"
+                    >
+                        Choose the character of your drive.
+                    </h2>
+                    <h2
+                        data-lang="zh"
+                        class="text-4xl font-bold tracking-[-0.04em] text-white md:text-6xl"
+                    >
+                        为你的驾驶，选择一种性格。
+                    </h2>
+                    <p
+                        data-lang="en"
+                        class="mt-6 text-lg leading-relaxed text-slate-400"
+                    >
+                        Each theme has its own visual language, while speed readability and
+                        distraction-free operation remain constant.
+                    </p>
+                    <p
+                        data-lang="zh"
+                        class="mt-6 text-lg leading-relaxed text-slate-400"
+                    >
+                        每种主题都有独立的视觉语言，但清晰的速度显示与低干扰操作始终不变。
+                    </p>
+                </div>
 
-        <p data-lang="en" class="text-lg text-slate-400 mb-12 max-w-2xl mx-auto">
-            Inspired by luxury timepieces. 10+ premium color schemes designed to match your car's interior and personal style.
-        </p>
-        <p data-lang="zh" class="text-lg text-slate-400 mb-12 max-w-2xl mx-auto">
-            灵感源自豪华名表。10+ 款精品配色方案，专为匹配您的爱车内饰和个人风格而设计。
-        </p>
+                <div class="mt-14 grid gap-6 md:grid-cols-2">
+                    <article class="theme-card glass overflow-hidden rounded-3xl">
+                        <div class="overflow-hidden">
+                            <img
+                                src="img/v1/hero/classic.png"
+                                alt="NeoGauge Classic dashboard"
+                                class="aspect-[16/9] w-full object-cover"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="p-7">
+                            <p class="eyebrow mb-2">01 · Classic</p>
+                            <h3 data-lang="en" class="text-2xl font-bold text-white">
+                                Mechanical calm
+                            </h3>
+                            <h3 data-lang="zh" class="text-2xl font-bold text-white">
+                                机械的从容
+                            </h3>
+                            <p data-lang="en" class="mt-3 leading-relaxed text-slate-400">
+                                Ceramic bezels, dimensional dials, and restrained typography
+                                inspired by timeless instruments.
+                            </p>
+                            <p data-lang="zh" class="mt-3 leading-relaxed text-slate-400">
+                                陶瓷质感表圈、立体内凹表盘与克制排版，向经典机械仪表致意。
+                            </p>
+                        </div>
+                    </article>
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div class="glass p-2 rounded-2xl overflow-hidden transform hover:scale-105 transition-transform">
-                <img src="img/themes/1.jpg" alt="Theme 1" class="w-full h-auto rounded-xl">
+                    <article class="theme-card glass overflow-hidden rounded-3xl">
+                        <div class="overflow-hidden">
+                            <img
+                                src="img/v1/hero/heritage.png"
+                                alt="NeoGauge Heritage dashboard"
+                                class="aspect-[16/9] w-full object-cover"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="p-7">
+                            <p class="eyebrow mb-2">02 · Heritage</p>
+                            <h3 data-lang="en" class="text-2xl font-bold text-white">
+                                Warm nostalgia
+                            </h3>
+                            <h3 data-lang="zh" class="text-2xl font-bold text-white">
+                                温暖的怀旧
+                            </h3>
+                            <p data-lang="en" class="mt-3 leading-relaxed text-slate-400">
+                                Familiar analog character and soft colors make everyday journeys
+                                feel a little more personal.
+                            </p>
+                            <p data-lang="zh" class="mt-3 leading-relaxed text-slate-400">
+                                熟悉的模拟仪表气质与温和配色，让平常的路也多一点私人记忆。
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="theme-card glass overflow-hidden rounded-3xl">
+                        <div class="overflow-hidden">
+                            <img
+                                src="img/v1/hero/colorful.png"
+                                alt="NeoGauge Colorful dashboard"
+                                class="aspect-[16/9] w-full object-cover"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="p-7">
+                            <p class="eyebrow mb-2">03 · Colorful</p>
+                            <h3 data-lang="en" class="text-2xl font-bold text-white">
+                                Playful energy
+                            </h3>
+                            <h3 data-lang="zh" class="text-2xl font-bold text-white">
+                                轻快的活力
+                            </h3>
+                            <p data-lang="en" class="mt-3 leading-relaxed text-slate-400">
+                                Bright color, approachable forms, and a lively personality for
+                                relaxed everyday driving.
+                            </p>
+                            <p data-lang="zh" class="mt-3 leading-relaxed text-slate-400">
+                                明快色彩、亲和造型与轻松个性，为日常驾驶带来一点好心情。
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="theme-card glass overflow-hidden rounded-3xl">
+                        <div class="overflow-hidden">
+                            <img
+                                src="img/v1/hero/neon.png"
+                                alt="NeoGauge Neon dashboard"
+                                class="aspect-[16/9] w-full object-cover"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="p-7">
+                            <p class="eyebrow mb-2">04 · Neon</p>
+                            <h3 data-lang="en" class="text-2xl font-bold text-white">
+                                After-dark focus
+                            </h3>
+                            <h3 data-lang="zh" class="text-2xl font-bold text-white">
+                                夜色中的专注
+                            </h3>
+                            <p data-lang="en" class="mt-3 leading-relaxed text-slate-400">
+                                Deep blacks, luminous segments, and high-impact information for a
+                                distinctly digital night drive.
+                            </p>
+                            <p data-lang="zh" class="mt-3 leading-relaxed text-slate-400">
+                                深黑背景、发光数字与高辨识信息，营造鲜明的数字夜驾氛围。
+                            </p>
+                        </div>
+                    </article>
+                </div>
             </div>
-            <div class="glass p-2 rounded-2xl overflow-hidden transform hover:scale-105 transition-transform">
-                <img src="img/themes/2.jpg" alt="Theme 2" class="w-full h-auto rounded-xl">
+        </section>
+
+        <section class="section-rule px-5 py-24 md:px-8 md:py-32">
+            <div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+                <div>
+                    <p class="eyebrow mb-4">
+                        <span data-lang="en">Designed for the road</span>
+                        <span data-lang="zh">为真实道路而设计</span>
+                    </p>
+                    <h2
+                        data-lang="en"
+                        class="text-4xl font-bold tracking-[-0.04em] text-white md:text-6xl"
+                    >
+                        The information you need. Nothing you don’t.
+                    </h2>
+                    <h2
+                        data-lang="zh"
+                        class="text-4xl font-bold tracking-[-0.04em] text-white md:text-6xl"
+                    >
+                        只呈现需要的信息，不让其他内容打扰你。
+                    </h2>
+                    <p data-lang="en" class="mt-6 text-lg leading-relaxed text-slate-400">
+                        NeoGauge is built around glanceable speed, stable motion, and layouts that
+                        remain balanced in portrait and landscape.
+                    </p>
+                    <p data-lang="zh" class="mt-6 text-lg leading-relaxed text-slate-400">
+                        NeoGauge 围绕一眼可读的速度、稳定的动态响应，以及横竖屏都平衡的布局设计。
+                    </p>
+
+                    <div class="mt-9 grid gap-4 sm:grid-cols-2">
+                        <div class="glass rounded-2xl p-5">
+                            <p class="text-xl font-bold text-white">
+                                <span data-lang="en">Large, clear speed</span>
+                                <span data-lang="zh">大而清晰的速度</span>
+                            </p>
+                            <p class="mt-2 text-sm leading-relaxed text-slate-400">
+                                <span data-lang="en">
+                                    High readability takes priority over visual effects.
+                                </span>
+                                <span data-lang="zh">可读性永远优先于视觉效果。</span>
+                            </p>
+                        </div>
+                        <div class="glass rounded-2xl p-5">
+                            <p class="text-xl font-bold text-white">
+                                <span data-lang="en">Day and night palettes</span>
+                                <span data-lang="zh">日夜配色</span>
+                            </p>
+                            <p class="mt-2 text-sm leading-relaxed text-slate-400">
+                                <span data-lang="en">
+                                    Contrast that suits changing light conditions.
+                                </span>
+                                <span data-lang="zh">为不同光线环境提供合适对比度。</span>
+                            </p>
+                        </div>
+                        <div class="glass rounded-2xl p-5">
+                            <p class="text-xl font-bold text-white">
+                                <span data-lang="en">Responsive GPS speed</span>
+                                <span data-lang="zh">灵敏而稳定的 GPS 速度</span>
+                            </p>
+                            <p class="mt-2 text-sm leading-relaxed text-slate-400">
+                                <span data-lang="en">
+                                    Tuned to feel smooth while responding quickly when you slow down.
+                                </span>
+                                <span data-lang="zh">兼顾平滑显示，并在减速时快速响应。</span>
+                            </p>
+                        </div>
+                        <div class="glass rounded-2xl p-5">
+                            <p class="text-xl font-bold text-white">
+                                <span data-lang="en">Phone and tablet ready</span>
+                                <span data-lang="zh">适配手机和平板</span>
+                            </p>
+                            <p class="mt-2 text-sm leading-relaxed text-slate-400">
+                                <span data-lang="en">
+                                    Flexible layouts for different screens and orientations.
+                                </span>
+                                <span data-lang="zh">灵活适应不同屏幕尺寸和使用方向。</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div
+                        class="absolute inset-8 bg-red-500/10 blur-[80px]"
+                        aria-hidden="true"
+                    ></div>
+                    <img
+                        src="img/v1/classic-light-portrait.png"
+                        alt="NeoGauge Classic dashboard in portrait orientation"
+                        class="relative mx-auto max-h-[720px] w-auto rounded-[2rem] shadow-2xl"
+                        loading="lazy"
+                    >
+                </div>
             </div>
-            <div class="glass p-2 rounded-2xl overflow-hidden transform hover:scale-105 transition-transform">
-                <img src="img/themes/3.jpg" alt="Theme 3" class="w-full h-auto rounded-xl">
+        </section>
+
+        <section id="journeys" class="section-rule px-5 py-24 md:px-8 md:py-32">
+            <div class="mx-auto max-w-7xl">
+                <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+                    <div class="order-2 lg:order-1">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="glass rounded-3xl p-6">
+                                <p class="text-3xl font-bold text-white">12.4</p>
+                                <p class="mt-2 text-sm text-slate-400">
+                                    <span data-lang="en">kilometres remembered</span>
+                                    <span data-lang="zh">公里旅程记忆</span>
+                                </p>
+                            </div>
+                            <div class="glass mt-8 rounded-3xl p-6">
+                                <p class="text-3xl font-bold text-white">34 min</p>
+                                <p class="mt-2 text-sm text-slate-400">
+                                    <span data-lang="en">a quiet evening drive</span>
+                                    <span data-lang="zh">一次安静的傍晚驾驶</span>
+                                </p>
+                            </div>
+                            <div class="glass -mt-8 rounded-3xl p-6">
+                                <p class="text-3xl font-bold text-white">62 km/h</p>
+                                <p class="mt-2 text-sm text-slate-400">
+                                    <span data-lang="en">average pace</span>
+                                    <span data-lang="zh">平均速度</span>
+                                </p>
+                            </div>
+                            <div class="glass rounded-3xl p-6">
+                                <p class="text-3xl font-bold text-red-400">Local</p>
+                                <p class="mt-2 text-sm text-slate-400">
+                                    <span data-lang="en">stored only on your device</span>
+                                    <span data-lang="zh">仅保存在你的设备上</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-1 lg:order-2">
+                        <p class="eyebrow mb-4">
+                            <span data-lang="en">More than a speedometer</span>
+                            <span data-lang="zh">不只是一块速度表</span>
+                        </p>
+                        <h2
+                            data-lang="en"
+                            class="text-4xl font-bold tracking-[-0.04em] text-white md:text-6xl"
+                        >
+                            Small records for the roads worth remembering.
+                        </h2>
+                        <h2
+                            data-lang="zh"
+                            class="text-4xl font-bold tracking-[-0.04em] text-white md:text-6xl"
+                        >
+                            用轻量记录，留住值得记住的路。
+                        </h2>
+                        <p data-lang="en" class="mt-6 text-lg leading-relaxed text-slate-400">
+                            Journeys turn distance, time, and pace into a simple memory of where
+                            the day took you — without turning your life into a feed.
+                        </p>
+                        <p data-lang="zh" class="mt-6 text-lg leading-relaxed text-slate-400">
+                            Journey 用距离、时间和速度留下简单的旅程记忆，
+                            不打卡、不社交，也不把你的生活变成信息流。
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="glass p-2 rounded-2xl overflow-hidden transform hover:scale-105 transition-transform">
-                <img src="img/themes/4.jpg" alt="Theme 4" class="w-full h-auto rounded-xl">
+        </section>
+
+        <section id="privacy" class="section-rule px-5 py-24 md:px-8 md:py-32">
+            <div
+                class="mx-auto max-w-6xl overflow-hidden rounded-[2rem] border border-purple-400/20 bg-gradient-to-br from-purple-900/30 via-white/[0.035] to-red-900/20 p-8 md:p-14"
+            >
+                <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+                    <div>
+                        <p class="eyebrow mb-4">
+                            <span data-lang="en">Privacy first, by design</span>
+                            <span data-lang="zh">隐私优先，从设计开始</span>
+                        </p>
+                        <h2
+                            data-lang="en"
+                            class="text-4xl font-bold tracking-[-0.04em] text-white md:text-6xl"
+                        >
+                            Your drive is not our business.
+                        </h2>
+                        <h2
+                            data-lang="zh"
+                            class="text-4xl font-bold tracking-[-0.04em] text-white md:text-6xl"
+                        >
+                            你的驾驶，不是我们的生意。
+                        </h2>
+                        <p data-lang="en" class="mt-6 text-lg leading-relaxed text-slate-300">
+                            Location is used on your device to calculate speed and support journey
+                            records. NeoGauge has no analytics, advertising SDKs, user tracking, or
+                            location-history uploads.
+                        </p>
+                        <p data-lang="zh" class="mt-6 text-lg leading-relaxed text-slate-300">
+                            位置信息仅在设备本地用于计算速度和支持旅程记录。
+                            NeoGauge 不包含分析工具、广告 SDK、用户追踪，也不会上传位置历史。
+                        </p>
+                        <a
+                            href="privacy.html"
+                            class="focus-ring mt-7 inline-block font-bold text-purple-300 transition hover:text-white"
+                        >
+                            <span data-lang="en">Read the privacy policy →</span>
+                            <span data-lang="zh">阅读隐私政策 →</span>
+                        </a>
+                    </div>
+
+                    <ul class="grid gap-3" role="list">
+                        <li class="glass rounded-2xl px-5 py-4 font-semibold text-white">
+                            <span data-lang="en">No advertising</span>
+                            <span data-lang="zh">没有广告</span>
+                        </li>
+                        <li class="glass rounded-2xl px-5 py-4 font-semibold text-white">
+                            <span data-lang="en">No analytics or user profiles</span>
+                            <span data-lang="zh">没有分析工具或用户画像</span>
+                        </li>
+                        <li class="glass rounded-2xl px-5 py-4 font-semibold text-white">
+                            <span data-lang="en">No location-history uploads</span>
+                            <span data-lang="zh">不上传位置历史</span>
+                        </li>
+                        <li class="glass rounded-2xl px-5 py-4 font-semibold text-white">
+                            <span data-lang="en">Journey records stay on your device</span>
+                            <span data-lang="zh">旅程记录保留在你的设备上</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Section 4: Tesla Inspired -->
-    <section class="py-24 px-6 max-w-6xl mx-auto flex flex-col md:flex-row gap-16 items-center">
-        <div class="flex-1 order-2 md:order-1">
-             <div class="grid grid-cols-2 gap-4 text-center">
-                 <div class="h-32 glass rounded-2xl flex flex-col items-center justify-center">
-                     <span class="text-2xl font-bold text-white">1.025</span>
-                     <span data-lang="en" class="text-xs text-slate-500 uppercase tracking-tighter mt-1">Calibration</span>
-                     <span data-lang="zh" class="text-xs text-slate-500 uppercase tracking-tighter mt-1">校准因子</span>
-                 </div>
-                 <div class="h-32 glass rounded-2xl flex flex-col items-center justify-center">
-                     <span class="text-2xl font-bold text-white">500ms</span>
-                     <span data-lang="en" class="text-xs text-slate-500 uppercase tracking-tighter mt-1">Sampling Rate</span>
-                     <span data-lang="zh" class="text-xs text-slate-500 uppercase tracking-tighter mt-1">采样率</span>
-                 </div>
-                 <div class="h-32 glass rounded-2xl flex flex-col items-center justify-center">
-                     <span data-lang="en" class="text-2xl font-bold text-white">Zero-Start</span>
-                     <span data-lang="zh" class="text-2xl font-bold text-white">零启动</span>
-                     <span data-lang="en" class="text-xs text-slate-500 uppercase tracking-tighter mt-1">Response</span>
-                     <span data-lang="zh" class="text-xs text-slate-500 uppercase tracking-tighter mt-1">瞬时响应</span>
-                 </div>
-                 <div class="h-32 glass rounded-2xl flex flex-col items-center justify-center">
-                     <span class="text-2xl font-bold text-white">GPS</span>
-                     <span data-lang="en" class="text-xs text-slate-500 uppercase tracking-tighter mt-1">Stability</span>
-                     <span data-lang="zh" class="text-xs text-slate-500 uppercase tracking-tighter mt-1">稳定性</span>
-                 </div>
-             </div>
-        </div>
-        <div class="flex-1 order-1 md:order-2">
-            <h2 data-lang="en" class="text-4xl font-bold mb-6">Tesla Inspired <span class="text-purple-500">Engineering</span></h2>
-            <h2 data-lang="zh" class="text-4xl font-bold mb-6">特斯拉启发 <span class="text-purple-500">工程设计</span></h2>
+        <section class="section-rule px-5 py-24 md:px-8 md:py-32">
+            <div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:items-center">
+                <div class="relative overflow-hidden rounded-3xl">
+                    <video
+                        class="aspect-video w-full object-cover"
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                        poster="img/roadtest.jpg"
+                    >
+                        <source src="img/roadtest.mp4" type="video/mp4">
+                    </video>
+                    <div
+                        class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"
+                    ></div>
+                </div>
 
-            <p data-lang="en" class="text-lg text-slate-400">
-                Inspired by the minimalist instrumentation of modern electric vehicles. We've implemented advanced low-pass filtering and a custom vehicle calibration factor to ensure NeoGauge matches your car's dashboard perfectly.
-            </p>
-            <p data-lang="zh" class="text-lg text-slate-400">
-                灵感源自现代电动汽车的简约仪表。我们实现了先进的低通滤波和自定义车辆校准因子，确保 NeoGauge 与您的爱车仪表完美匹配。
-            </p>
-        </div>
-    </section>
+                <div>
+                    <p class="eyebrow mb-4">
+                        <span data-lang="en">Refined on real roads</span>
+                        <span data-lang="zh">在真实道路上打磨</span>
+                    </p>
+                    <h2
+                        data-lang="en"
+                        class="text-4xl font-bold tracking-[-0.04em] text-white md:text-6xl"
+                    >
+                        Built in Melbourne. Tested while driving.
+                    </h2>
+                    <h2
+                        data-lang="zh"
+                        class="text-4xl font-bold tracking-[-0.04em] text-white md:text-6xl"
+                    >
+                        在墨尔本打造，在真实驾驶中测试。
+                    </h2>
+                    <p data-lang="en" class="mt-6 text-lg leading-relaxed text-slate-400">
+                        NeoGauge is shaped by everyday use: changing daylight, imperfect GPS
+                        conditions, different screen sizes, and the simple need to read speed at a
+                        glance.
+                    </p>
+                    <p data-lang="zh" class="mt-6 text-lg leading-relaxed text-slate-400">
+                        NeoGauge 在日常使用中持续打磨：变化的光线、不完美的 GPS 环境、
+                        不同尺寸的屏幕，以及驾驶时一眼读清速度这个最基本的需求。
+                    </p>
+                </div>
+            </div>
+        </section>
 
-    <!-- Section 5: Privacy & Safety -->
-    <section id="download" class="py-24 bg-white/5">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 data-lang="en" class="text-3xl font-bold mb-8 italic text-red-400 underline decoration-red-900">Safety First</h2>
-            <h2 data-lang="zh" class="text-3xl font-bold mb-8 italic text-red-400 underline decoration-red-900">安全第一</h2>
-
-            <p data-lang="en" class="text-slate-400 mb-12">
-                NeoGauge is a supplemental tool. Never look at your phone while driving. Obey all local traffic laws.
-            </p>
-            <p data-lang="zh" class="text-slate-400 mb-12">
-                NeoGauge 仅作为辅助工具。驾驶时严禁注视手机。请遵守当地所有交通法规。
-            </p>
-
-            <div class="p-10 glass rounded-[3rem] inline-block border-purple-500/20">
-                <h3 data-lang="en" class="text-2xl font-bold mb-4">No Tracking. No Data Collection. No Ads.</h3>
-                <h3 data-lang="zh" class="text-2xl font-bold mb-4">无追踪，无数据收集，无广告。</h3>
-
-                <p data-lang="en" class="text-slate-300 max-w-md mx-auto">
-                    We respect your privacy. Location data is processed strictly on-device to calculate real-time speed. We never upload or share your data.
+        <section class="section-rule px-5 py-24 text-center md:px-8 md:py-32">
+            <div class="mx-auto max-w-3xl">
+                <p class="eyebrow mb-4">
+                    <span data-lang="en">Ready for the next drive?</span>
+                    <span data-lang="zh">准备好下一段路了吗？</span>
                 </p>
-                <p data-lang="zh" class="text-slate-300 max-w-md mx-auto">
-                    我们尊重您的隐私。位置数据严格在设备本地处理以计算实时车速。我们绝不上传或分享您的数据。
+                <h2
+                    data-lang="en"
+                    class="text-4xl font-bold tracking-[-0.04em] text-white md:text-6xl"
+                >
+                    Bring a little character back to the dashboard.
+                </h2>
+                <h2
+                    data-lang="zh"
+                    class="text-4xl font-bold tracking-[-0.04em] text-white md:text-6xl"
+                >
+                    让仪表盘重新有一点性格。
+                </h2>
+                <div class="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
+                    <a
+                        href="download/"
+                        class="focus-ring rounded-full bg-purple-600 px-8 py-4 font-bold text-white transition hover:bg-purple-500"
+                    >
+                        <span data-lang="en">Download Android beta</span>
+                        <span data-lang="zh">下载 Android 测试版</span>
+                    </a>
+                    <a
+                        href="https://github.com/Jianli03/NeoGauge"
+                        class="focus-ring glass rounded-full px-8 py-4 font-bold text-white transition hover:bg-white/10"
+                    >
+                        <span data-lang="en">View on GitHub</span>
+                        <span data-lang="zh">在 GitHub 查看</span>
+                    </a>
+                </div>
+                <p class="mt-8 text-sm leading-relaxed text-slate-500">
+                    <span data-lang="en">
+                        NeoGauge is a supplemental display. Mount your device securely and always
+                        follow local traffic laws.
+                    </span>
+                    <span data-lang="zh">
+                        NeoGauge 仅作为辅助显示。请稳妥固定设备，并始终遵守当地交通法规。
+                    </span>
                 </p>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Section 6: Share -->
-    <section class="py-24 px-6 max-w-4xl mx-auto text-center">
-        <h2 data-lang="en" class="text-4xl font-bold mb-8">Share <span class="text-purple-500">NeoGauge</span></h2>
-        <h2 data-lang="zh" class="text-4xl font-bold mb-8">分享 <span class="text-purple-500">NeoGauge</span></h2>
-
-        <p data-lang="en" class="text-slate-400 mb-12 max-w-lg mx-auto">
-            Help us grow by sharing this app with your fellow drivers and enthusiasts!
-        </p>
-        <p data-lang="zh" class="text-slate-400 mb-12 max-w-lg mx-auto">
-            如果您喜欢这个应用，请把它分享给更多的驾驶爱好者！
-        </p>
-
-        <div class="flex flex-wrap justify-center gap-4">
-            <!-- Web Share API Button -->
-            <button onclick="shareApp()" class="glass px-8 py-4 rounded-full flex items-center gap-3 hover:bg-white/10 transition-all border border-purple-500/30 group">
-                <svg class="w-5 h-5 text-purple-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg>
-                <span data-lang="en" class="font-bold text-white">Share Now</span>
-                <span data-lang="zh" class="font-bold text-white">立即分享</span>
-            </button>
-
-            <!-- X (Twitter) -->
-            <a id="share-x" href="#" target="_blank" class="glass w-14 h-14 rounded-full flex items-center justify-center hover:bg-white/10 transition-all border border-white/5">
-                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
-            </a>
-
-            <!-- Facebook -->
-            <a id="share-fb" href="#" target="_blank" class="glass w-14 h-14 rounded-full flex items-center justify-center hover:bg-white/10 transition-all border border-white/5">
-                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
-            </a>
-
-            <!-- WeChat -->
-            <button onclick="toggleWechatQR()" class="glass w-14 h-14 rounded-full flex items-center justify-center hover:bg-white/10 transition-all border border-green-500/20 text-[#07C160]">
-                <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M8.29 10.56a1.65 1.65 0 0 0 .34 1 1.44 1.44 0 0 0 1.12.55 1.41 1.41 0 0 0 1.11-.55 1.65 1.65 0 0 0 .34-1 1.65 1.65 0 0 0-.34-1 1.41 1.41 0 0 0-1.11-.55 1.44 1.44 0 0 0-1.12.55 1.65 1.65 0 0 0-.34 1m7.63-1a1.41 1.41 0 0 0-1.11.55 1.65 1.65 0 0 0-.34 1 1.65 1.65 0 0 0 .34 1 1.41 1.41 0 0 0 1.11.55 1.44 1.44 0 0 0 1.12-.55 1.65 1.65 0 0 0 .34-1 1.65 1.65 0 0 0-.34-1 1.44 1.44 0 0 0-1.12-.55M24 9.46c0-4.14-4.22-7.5-9.42-7.5-5.21 0-9.43 3.36-9.43 7.5 0 4.15 4.22 7.51 9.43 7.51.52 0 1.03-.04 1.54-.11l2.48 1.46c.33.2.73.13 1-.16.27-.29.28-.75.02-1.06l-.7-1a7.43 7.43 0 0 0 5.08-6.64M5.61 14.28a5.55 5.55 0 0 1-3.69 4.87c-.23.1-.25.4-.04.53l1.83 1.07c.24.15.54.1.74-.11.2-.21.21-.55.02-.78l-.52-.74a5.51 5.51 0 0 0 3.76-4.91c0-3.07-3.13-5.56-6.98-5.56-3.85 0-6.98 2.49-6.98 5.56 0 3.07 3.13 5.56 6.98 5.56.39 0 .77-.03 1.14-.08l.74.43z"></path></svg>
-            </button>
-        </div>
-    </section>
-
-    <!-- WeChat QR Modal -->
-    <div id="wechat-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" onclick="toggleWechatQR()">
-        <div class="glass p-8 rounded-[2.5rem] max-w-xs w-full text-center border border-white/10 shadow-2xl transform transition-all" onclick="event.stopPropagation()">
-            <h3 class="text-xl font-bold mb-4 text-white">NeoGauge</h3>
-            <div class="bg-white p-4 rounded-2xl mb-6 shadow-inner">
-                <img src="img/qr_code.png" alt="WeChat QR Code" class="w-full h-auto rounded-lg">
+    <footer class="section-rule px-5 py-10 text-sm text-slate-500 md:px-8">
+        <div
+            class="mx-auto flex max-w-7xl flex-col gap-6 text-center md:flex-row md:items-center md:justify-between md:text-left"
+        >
+            <div>
+                <p class="font-bold text-slate-300">NEO<span class="text-red-500">GAUGE</span></p>
+                <p class="mt-1">
+                    <span data-lang="en">
+                        Developed with love by James Li in Melbourne, Australia.
+                    </span>
+                    <span data-lang="zh">由 James Li 在澳大利亚墨尔本用心开发。</span>
+                </p>
             </div>
-            <p data-lang="en" class="text-slate-400 text-sm mb-6">Scan code in WeChat to share with friends!</p>
-            <p data-lang="zh" class="text-slate-400 text-sm mb-6">请使用微信扫一扫分享给好友！</p>
-            <button onclick="toggleWechatQR()" class="w-full py-3 bg-white/5 hover:bg-white/10 rounded-xl transition-all font-medium text-white border border-white/10">
-                Close / 关闭
-            </button>
+            <div class="flex flex-wrap justify-center gap-x-6 gap-y-3 md:justify-end">
+                <a href="privacy.html" class="focus-ring transition hover:text-white">
+                    <span data-lang="en">Privacy</span>
+                    <span data-lang="zh">隐私政策</span>
+                </a>
+                <a href="disclaimer.html" class="focus-ring transition hover:text-white">
+                    <span data-lang="en">Disclaimer</span>
+                    <span data-lang="zh">免责声明</span>
+                </a>
+                <a
+                    href="https://github.com/Jianli03/NeoGauge"
+                    class="focus-ring transition hover:text-white"
+                >
+                    GitHub
+                </a>
+            </div>
         </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="py-12 px-6 border-t border-white/5 text-center text-slate-500 text-sm">
-        <p class="mb-4">&copy; 2026 NeoGauge. Developed by James Li@ in Melbourne, Australia.</p>
-        <div class="flex justify-center gap-6 mb-8">
-            <a href="privacy.html" data-lang="en" class="hover:text-white">Privacy Policy</a>
-            <a href="privacy.html" data-lang="zh" class="hover:text-white">隐私政策</a>
-            <a href="disclaimer.html" data-lang="en" class="hover:text-white">Disclaimer</a>
-            <a href="disclaimer.html" data-lang="zh" class="hover:text-white">免责声明</a>
-            <a href="https://github.com/Jianli03/NeoGauge" data-lang="en" class="hover:text-white">Contact</a>
-            <a href="https://github.com/Jianli03/NeoGauge" data-lang="zh" class="hover:text-white">联系我们</a>
-        </div>
-        <p data-lang="en" class="max-w-2xl mx-auto opacity-50 font-light">
-            NeoGauge is an independent Android project
-            focused on delivering a clean and nostalgic
-            digital dashboard experience.
-        </p>
-        <p data-lang="zh" class="max-w-2xl mx-auto opacity-50 font-light">
-            NeoGauge 是一款独立开发的 Android 应用，专注于为用户提供简洁且富有科技感的数字仪表盘体验。
+        <p class="mx-auto mt-8 max-w-7xl text-center text-xs text-slate-600 md:text-left">
+            © 2026 NeoGauge.
         </p>
     </footer>
 
     <script>
-        function setLanguage(lang) {
-            document.querySelectorAll('[data-lang]').forEach(el => {
-                el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
+        const languageButton = document.getElementById("language-button");
+        const heroCarousel = document.getElementById("hero-carousel");
+        const heroImage = document.getElementById("hero-image");
+        const heroLabel = document.getElementById("hero-label");
+        const heroDots = document.getElementById("hero-dots");
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const themes = [
+            {
+                name: "Classic",
+                src: "img/v1/hero/classic.png",
+                alt: "NeoGauge Classic dashboard"
+            },
+            {
+                name: "Heritage",
+                src: "img/v1/hero/heritage.png",
+                alt: "NeoGauge Heritage dashboard"
+            },
+            {
+                name: "Colorful",
+                src: "img/v1/hero/colorful.png",
+                alt: "NeoGauge Colorful dashboard"
+            },
+            {
+                name: "Neon",
+                src: "img/v1/hero/neon.png",
+                alt: "NeoGauge Neon dashboard"
+            }
+        ];
+        let language = localStorage.getItem("neoGaugeLang") || "en";
+        let heroIndex = 0;
+        let heroTimer = null;
+
+        /**
+         * Applies one language consistently without duplicating layout logic.
+         *
+         * @param {string} nextLanguage Language code to display.
+         * @returns {void}
+         */
+        function setLanguage(nextLanguage) {
+            language = nextLanguage === "zh" ? "zh" : "en";
+            document.documentElement.lang = language === "zh" ? "zh-CN" : "en";
+
+            document.querySelectorAll("[data-lang]").forEach((element) => {
+                element.style.display = element.dataset.lang === language ? "" : "none";
             });
 
-            // Re-apply correct display for flex containers or special elements
-            document.querySelectorAll('a[data-lang="' + lang + '"]').forEach(el => el.style.display = 'inline-block');
-            document.querySelectorAll('span[data-lang="' + lang + '"]').forEach(el => el.style.display = 'inline');
-            document.querySelectorAll('ul[data-lang="' + lang + '"]').forEach(el => el.style.display = 'block');
-
-            // Save preference
-            localStorage.setItem('neoGaugeLang', lang);
+            localStorage.setItem("neoGaugeLang", language);
         }
 
-        // Initialize from local storage or default to English
-        const savedLang = localStorage.getItem('neoGaugeLang') || 'en';
-        setLanguage(savedLang);
+        /**
+         * Updates the hero image and selection state for the chosen theme.
+         *
+         * @param {number} index Theme position in the carousel.
+         * @returns {void}
+         */
+        function showTheme(index) {
+            heroIndex = index;
+            const theme = themes[index];
+            heroImage.classList.add("opacity-0");
 
-        // Share functionality
-        const shareData = {
-            title: 'NeoGauge Speedometer',
-            text: 'NeoGauge Speedometer - 体验极致的复古未来主义安卓速度计。无广告，无追踪。',
-            url: window.location.origin + window.location.pathname
-        };
+            window.setTimeout(() => {
+                heroImage.src = theme.src;
+                heroImage.alt = theme.alt;
+                heroLabel.textContent = theme.name;
+                heroImage.classList.remove("opacity-0");
+            }, reduceMotion ? 0 : 180);
 
-        async function shareApp() {
-            if (navigator.share) {
-                try {
-                    await navigator.share(shareData);
-                } catch (err) {
-                    console.log('Share failed:', err);
-                }
-            } else {
-                // Fallback: Copy link or show social links
-                const dummy = document.createElement('input');
-                document.body.appendChild(dummy);
-                dummy.value = shareData.url;
-                dummy.select();
-                document.execCommand('copy');
-                document.body.removeChild(dummy);
-                alert('Link copied to clipboard! / 链接已复制到剪贴板！');
+            Array.from(heroDots.children).forEach((dot, dotIndex) => {
+                dot.className = dotIndex === index
+                    ? "h-2 w-5 rounded-full bg-red-500 transition-all"
+                    : "h-2 w-2 rounded-full bg-white/35 transition-all";
+                dot.setAttribute("aria-pressed", String(dotIndex === index));
+            });
+        }
+
+        /**
+         * Starts automatic theme rotation when motion is allowed.
+         *
+         * @returns {void}
+         */
+        function startCarousel() {
+            if (reduceMotion || heroTimer !== null) {
+                return;
             }
+
+            heroTimer = window.setInterval(() => {
+                showTheme((heroIndex + 1) % themes.length);
+            }, 5200);
         }
 
-        function toggleWechatQR() {
-            const modal = document.getElementById('wechat-modal');
-            modal.classList.toggle('hidden');
+        /**
+         * Stops automatic rotation while the user interacts with the carousel.
+         *
+         * @returns {void}
+         */
+        function stopCarousel() {
+            if (heroTimer === null) {
+                return;
+            }
+
+            window.clearInterval(heroTimer);
+            heroTimer = null;
         }
 
-        // Set social links
-        document.getElementById('share-x').href = `https://twitter.com/intent/tweet?url=${encodeURIComponent(shareData.url)}&text=${encodeURIComponent(shareData.text)}`;
-        document.getElementById('share-fb').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareData.url)}`;
+        themes.forEach((theme, index) => {
+            const image = new Image();
+            image.src = theme.src;
+
+            const dot = document.createElement("button");
+            dot.type = "button";
+            dot.className = "h-2 w-2 rounded-full bg-white/35 transition-all";
+            dot.setAttribute("aria-label", `Show ${theme.name} theme`);
+            dot.addEventListener("click", () => showTheme(index));
+            heroDots.appendChild(dot);
+        });
+
+        languageButton.addEventListener("click", () => {
+            setLanguage(language === "en" ? "zh" : "en");
+        });
+        heroCarousel.addEventListener("mouseenter", stopCarousel);
+        heroCarousel.addEventListener("mouseleave", startCarousel);
+        heroCarousel.addEventListener("focusin", stopCarousel);
+        heroCarousel.addEventListener("focusout", startCarousel);
+        heroCarousel.addEventListener("touchstart", stopCarousel, { passive: true });
+
+        setLanguage(language);
+        showTheme(0);
+        startCarousel();
     </script>
-
 </body>
 </html>
