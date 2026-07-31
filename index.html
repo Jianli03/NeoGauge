@@ -1098,7 +1098,116 @@
                 </a>
             </div>
         </div>
-        <p class="mx-auto mt-8 max-w-7xl text-center text-xs text-slate-600 md:text-left">
+        <div
+            class="mx-auto mt-8 flex max-w-7xl flex-col items-center gap-4 border-t border-white/10 pt-8 md:flex-row md:justify-between"
+        >
+            <p class="font-semibold text-slate-300">
+                <span data-lang="en">Share NeoGauge</span>
+                <span data-lang="zh">分享 NeoGauge</span>
+            </p>
+            <div class="flex items-center gap-3">
+                <button
+                    id="native-share-button"
+                    type="button"
+                    class="focus-ring inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-slate-300 transition hover:border-white/25 hover:bg-white/[0.08] hover:text-white"
+                    aria-label="Share NeoGauge"
+                    title="Share"
+                >
+                    <svg
+                        class="h-5 w-5"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        aria-hidden="true"
+                    >
+                        <circle cx="18" cy="5" r="2.5"></circle>
+                        <circle cx="6" cy="12" r="2.5"></circle>
+                        <circle cx="18" cy="19" r="2.5"></circle>
+                        <path d="m8.2 10.8 7.6-4.5M8.2 13.2l7.6 4.5"></path>
+                    </svg>
+                </button>
+                <a
+                    id="share-x"
+                    class="focus-ring inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-slate-300 transition hover:border-white/25 hover:bg-white/[0.08] hover:text-white"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Share NeoGauge on X"
+                    title="Share on X"
+                >
+                    <svg
+                        class="h-4 w-4"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        aria-hidden="true"
+                    >
+                        <path d="M18.9 2H22l-6.8 7.8L23.2 22H17l-4.9-6.4L6.5 22H3.4l7.2-8.2L.8 2h6.4l4.4 5.8L18.9 2Zm-1.1 17.8h1.7L6.3 4.1H4.5l13.3 15.7Z"></path>
+                    </svg>
+                </a>
+                <a
+                    id="share-facebook"
+                    class="focus-ring inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-slate-300 transition hover:border-white/25 hover:bg-white/[0.08] hover:text-white"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Share NeoGauge on Facebook"
+                    title="Share on Facebook"
+                >
+                    <svg
+                        class="h-5 w-5"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        aria-hidden="true"
+                    >
+                        <path d="M13.7 22v-9h3l.5-3.5h-3.5V7.3c0-1 .3-1.7 1.8-1.7h1.9V2.5a25 25 0 0 0-2.8-.2c-2.8 0-4.7 1.7-4.7 4.8v2.4H6.8V13h3.1v9h3.8Z"></path>
+                    </svg>
+                </a>
+                <a
+                    id="share-linkedin"
+                    class="focus-ring inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-slate-300 transition hover:border-white/25 hover:bg-white/[0.08] hover:text-white"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Share NeoGauge on LinkedIn"
+                    title="Share on LinkedIn"
+                >
+                    <svg
+                        class="h-5 w-5"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        aria-hidden="true"
+                    >
+                        <path d="M5.3 7.8H1.8V22h3.5V7.8ZM3.6 2A2.1 2.1 0 1 0 3.6 6.2 2.1 2.1 0 0 0 3.6 2ZM22 13.8c0-4.3-2.3-6.3-5.4-6.3-2.5 0-3.6 1.4-4.2 2.3v-2H8.9V22h3.5v-7c0-1.9.4-3.7 2.7-3.7 2.2 0 2.3 2.1 2.3 3.8V22H22v-8.2Z"></path>
+                    </svg>
+                </a>
+                <button
+                    id="copy-share-link"
+                    type="button"
+                    class="focus-ring inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-slate-300 transition hover:border-white/25 hover:bg-white/[0.08] hover:text-white"
+                    aria-label="Copy NeoGauge link"
+                    title="Copy link"
+                >
+                    <svg
+                        class="h-5 w-5"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        aria-hidden="true"
+                    >
+                        <path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"></path>
+                        <path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"></path>
+                    </svg>
+                </button>
+            </div>
+            <p
+                id="share-status"
+                class="min-h-5 text-xs text-slate-400 md:text-right"
+                aria-live="polite"
+            ></p>
+        </div>
+        <p class="mx-auto mt-6 max-w-7xl text-center text-xs text-slate-600 md:text-left">
             © 2026 NeoGauge.
         </p>
     </footer>
@@ -1109,6 +1218,12 @@
         const heroImage = document.getElementById("hero-image");
         const heroLabel = document.getElementById("hero-label");
         const heroDots = document.getElementById("hero-dots");
+        const nativeShareButton = document.getElementById("native-share-button");
+        const copyShareLinkButton = document.getElementById("copy-share-link");
+        const shareStatus = document.getElementById("share-status");
+        const shareUrl = document.querySelector('link[rel="canonical"]').href;
+        const shareTitle = "NeoGauge — Make every drive feel different";
+        const shareText = "Four expressive Android dashboards with clear GPS speed.";
         const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         const themes = [
             {
@@ -1204,6 +1319,59 @@
             heroTimer = null;
         }
 
+        /**
+         * Copies the public website URL without relying on social tracking scripts.
+         *
+         * @returns {Promise<void>}
+         */
+        async function copyShareUrl() {
+            try {
+                await navigator.clipboard.writeText(shareUrl);
+                shareStatus.textContent = language === "zh"
+                    ? "链接已复制"
+                    : "Link copied";
+            } catch {
+                const temporaryInput = document.createElement("textarea");
+                temporaryInput.value = shareUrl;
+                temporaryInput.setAttribute("readonly", "");
+                temporaryInput.style.position = "fixed";
+                temporaryInput.style.opacity = "0";
+                document.body.appendChild(temporaryInput);
+                temporaryInput.select();
+                document.execCommand("copy");
+                temporaryInput.remove();
+                shareStatus.textContent = language === "zh"
+                    ? "链接已复制"
+                    : "Link copied";
+            }
+        }
+
+        /**
+         * Opens the device share sheet, including installed messaging apps on mobile.
+         *
+         * @returns {Promise<void>}
+         */
+        async function shareWithDevice() {
+            if (!navigator.share) {
+                await copyShareUrl();
+
+                return;
+            }
+
+            try {
+                await navigator.share({
+                    title: shareTitle,
+                    text: shareText,
+                    url: shareUrl
+                });
+            } catch (error) {
+                // Why: Closing the native share sheet is an expected user action.
+                if (error.name !== "AbortError") {
+                    await copyShareUrl();
+                }
+            }
+        }
+
         themes.forEach((theme, index) => {
             const image = new Image();
             image.src = theme.src;
@@ -1224,6 +1392,15 @@
         heroCarousel.addEventListener("focusin", stopCarousel);
         heroCarousel.addEventListener("focusout", startCarousel);
         heroCarousel.addEventListener("touchstart", stopCarousel, { passive: true });
+        nativeShareButton.addEventListener("click", shareWithDevice);
+        copyShareLinkButton.addEventListener("click", copyShareUrl);
+
+        document.getElementById("share-x").href =
+            `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+        document.getElementById("share-facebook").href =
+            `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
+        document.getElementById("share-linkedin").href =
+            `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
 
         setLanguage(language);
         showTheme(0);
