@@ -246,7 +246,7 @@
                 </div>
             </div>
 
-            <div class="relative mx-auto mt-14 max-w-5xl md:mt-20">
+            <div id="themes" class="relative mx-auto mt-14 max-w-5xl scroll-mt-24 md:mt-20">
                 <div
                     class="absolute inset-x-12 bottom-0 h-32 bg-purple-600/20 blur-[80px]"
                     aria-hidden="true"
@@ -257,8 +257,8 @@
                 >
                     <img
                         id="hero-image"
-                        src="img/v1/hero/classic.png"
-                        alt="NeoGauge Classic dashboard"
+                        src="img/v1/themes/light/classic.png"
+                        alt="NeoGauge Classic dashboard in light mode"
                         class="aspect-[13/6] w-full object-contain transition-opacity duration-500"
                     >
                     <div
@@ -271,12 +271,12 @@
                             id="hero-label"
                             class="text-xs font-bold uppercase tracking-[0.16em] text-white"
                         >
-                            Classic
+                            Classic · Light
                         </span>
                         <div
                             id="hero-dots"
                             class="flex gap-2"
-                            aria-label="Choose dashboard theme"
+                            aria-label="Choose dashboard theme and display mode"
                         ></div>
                     </div>
                 </div>
@@ -338,7 +338,7 @@
             </div>
         </section>
 
-        <section id="themes" class="section-rule px-5 py-24 md:px-8 md:py-32">
+        <section id="theme-details" class="hidden" aria-hidden="true">
             <div class="mx-auto max-w-7xl">
                 <div class="mx-auto max-w-3xl text-center">
                     <p class="eyebrow mb-4">
@@ -648,7 +648,8 @@
 
         <section
             id="dark-themes"
-            class="section-rule bg-black/30 px-5 py-24 md:px-8 md:py-32"
+            class="hidden"
+            aria-hidden="true"
         >
             <div class="mx-auto max-w-7xl">
                 <div class="mx-auto max-w-3xl text-center">
@@ -1227,24 +1228,44 @@
         const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         const themes = [
             {
-                name: "Classic",
-                src: "img/v1/hero/classic.png",
-                alt: "NeoGauge Classic dashboard"
+                name: "Classic · Light",
+                src: "img/v1/themes/light/classic.png",
+                alt: "NeoGauge Classic dashboard in light mode"
             },
             {
-                name: "Heritage",
-                src: "img/v1/hero/heritage.png",
-                alt: "NeoGauge Heritage dashboard"
+                name: "Heritage · Light",
+                src: "img/v1/themes/light/heritage.png",
+                alt: "NeoGauge Heritage dashboard in light mode"
             },
             {
-                name: "Colorful",
-                src: "img/v1/hero/colorful.png",
-                alt: "NeoGauge Colorful dashboard"
+                name: "Colorful · Light",
+                src: "img/v1/themes/light/colorful.png",
+                alt: "NeoGauge Colorful dashboard in light mode"
             },
             {
-                name: "Neon",
-                src: "img/v1/hero/neon.png",
-                alt: "NeoGauge Neon dashboard"
+                name: "Neon · Light",
+                src: "img/v1/themes/light/neon.png",
+                alt: "NeoGauge Neon dashboard in light mode"
+            },
+            {
+                name: "Classic · Dark",
+                src: "img/v1/themes/dark/classic.png",
+                alt: "NeoGauge Classic dashboard in dark mode"
+            },
+            {
+                name: "Heritage · Dark",
+                src: "img/v1/themes/dark/heritage.png",
+                alt: "NeoGauge Heritage dashboard in dark mode"
+            },
+            {
+                name: "Colorful · Dark",
+                src: "img/v1/themes/dark/colorful.png",
+                alt: "NeoGauge Colorful dashboard in dark mode"
+            },
+            {
+                name: "Neon · Dark",
+                src: "img/v1/themes/dark/neon.png",
+                alt: "NeoGauge Neon dashboard in dark mode"
             }
         ];
         let language = localStorage.getItem("neoGaugeLang") || "en";
@@ -1302,7 +1323,7 @@
 
             heroTimer = window.setInterval(() => {
                 showTheme((heroIndex + 1) % themes.length);
-            }, 5200);
+            }, 3800);
         }
 
         /**
