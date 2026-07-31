@@ -1,99 +1,167 @@
-# NEOGAUGE - Retro-Futuristic Speedometer
+<div align="center">
 
-[![Platform](https://img.shields.io/badge/Platform-Android-green.svg)](https://www.android.com)
-[![Version](https://img.shields.io/badge/Version-0.9.2-purple.svg)](#download)
-[![Privacy](https://img.shields.io/badge/Privacy-No--Ads%20%7C%20No--Tracking-blue.svg)](privacy.html)
+# NEOGAUGE
 
-[English](#english) | [中文](#中文)
+### A retro-futuristic Android driving companion
+
+Four expressive dashboards · Clear GPS speed · Local journey memories
+
+[Official website](https://jianli03.github.io/NeoGauge/) ·
+[Download Android beta](https://jianli03.github.io/NeoGauge/download/) ·
+[中文介绍](#中文)
+
+</div>
+
+![NeoGauge Classic dashboard](img/v1/hero/classic.png)
+
+## Make every drive feel different
+
+NeoGauge turns live driving data into a clear, expressive digital dashboard.
+It combines four distinctive visual themes with glanceable GPS speed and quiet
+journey memories that stay on your device.
+
+It is designed as a warm, distraction-free driving companion—not another
+analytics platform, social feed, or advertising surface.
+
+## Four dashboards
+
+| Classic | Heritage |
+| --- | --- |
+| ![Classic dashboard](img/v1/hero/classic.png) | ![Heritage dashboard](img/v1/hero/heritage.png) |
+| Mechanical calm, ceramic-style bezels, and timeless instrument character. | Warm analog personality and familiar colors for nostalgic everyday drives. |
+
+| Colorful | Neon |
+| --- | --- |
+| ![Colorful dashboard](img/v1/hero/colorful.png) | ![Neon dashboard](img/v1/hero/neon.png) |
+| Bright, approachable, and playful for relaxed daily driving. | Deep blacks and luminous digital segments for focused night drives. |
+
+Each theme has its own visual language while preserving the same priorities:
+clear speed, balanced layout, and minimal distraction.
+
+## Designed for the road
+
+- **Large, readable speed** — visibility always takes priority over decoration.
+- **Responsive GPS display** — tuned for smooth motion and fast deceleration response.
+- **Day and night palettes** — suitable contrast for changing light conditions.
+- **Portrait and landscape layouts** — designed for different mounts and screens.
+- **Phone and tablet support** — adaptive spacing keeps the dashboard balanced.
+- **Real-road refinement** — tested and improved through everyday driving.
+
+## Journey memories
+
+NeoGauge can keep lightweight journey records such as distance, duration, and
+driving pace. The goal is to remember where the day took you without turning
+every drive into a score, social post, or cloud profile.
+
+Journey records stay on your device.
+
+## Privacy by design
+
+NeoGauge uses location on your device to calculate GPS speed and support journey
+records.
+
+- No advertising
+- No analytics SDKs
+- No user tracking
+- No location-history uploads
+- No personal data collection
+
+Read the [Privacy Policy](privacy.html) for details.
+
+## Download
+
+Download the latest Android beta from the permanent download page:
+
+### [Download NeoGauge for Android](https://jianli03.github.io/NeoGauge/download/)
+
+Android 10 or newer is recommended. Location permission is required for live
+GPS speed.
+
+> NeoGauge is a supplemental display. Mount your device securely, do not
+> operate it while driving, and always follow local traffic laws.
+
+## Project
+
+This repository contains the NeoGauge public website, download redirect, release
+metadata, privacy policy, and disclaimer.
+
+- **App:** Kotlin and Jetpack Compose
+- **Website:** Static HTML hosted with GitHub Pages
+- **Feedback:** [GitHub Issues](https://github.com/Jianli03/NeoGauge/issues)
+- **License:** [MIT](LICENSE)
+
+Developed with love by James Li in Melbourne, Australia.
 
 ---
 
-<a name="english"></a>
-## English
+# 中文
 
-**NeoGauge** is a high-performance Android speedometer app that blends classic mechanical aesthetics with modern "Sci-Fi Neon" design. Inspired by vintage motorcycle gauges and Tesla's minimalist digital interaction, it aims to provide drivers with an immersive and unique visual experience.
+## 让每一次驾驶都有不一样的感觉
 
-### [🚀 Visit Official Demo Page (GitHub Pages)](https://jianli03.github.io/NeoGauge/)
+NeoGauge 是一款复古未来主义 Android 驾驶伙伴。它将实时驾驶数据变成清晰而有个性的
+数字仪表，以四种独特主题陪你上路，并在设备本地安静地留住每段旅程。
 
-### ✨ Key Features
+它不是数据分析平台，也不是社交信息流，而是一款温暖、简洁、低干扰的驾驶工具。
 
-- **Mechanical Soul**: A meticulously crafted 5-digit rolling odometer logic that accurately simulates physical gear cascading.
-- **Day/Night Dual Mode**:
-    - **Day Mode**: High-contrast design ensuring clarity under direct sunlight.
-    - **Neon Night Mode**: Deep gray background with multi-layered glow effects to reduce visual fatigue during night driving.
-- **Smart Power Management**:
-    - **Three-Level Power Saving**: Automatically switches between Active (full brightness) / Dimmed (energy saving) / Dormant (hibernation) states based on vehicle dynamics.
-    - **Vibration Wake-up**: Senses subtle vibrations like closing a car door or starting the engine via accelerometer to instantly light up the screen.
-- **Global Positioning Compatibility**: Supports switching between Google Play Services and native Android GPS engines, perfectly adapted for devices without GMS (like in mainland China).
-- **OLED Protection**: Built-in periodic Pixel Shifting to effectively prevent screen burn-in.
-- **Extreme Privacy**: No ads, no tracking, no data collection. All processing is done locally on the device.
+## 四种仪表主题
 
-### 📸 Interface Preview
+| Classic 经典 | Heritage 传承 |
+| --- | --- |
+| ![Classic 经典仪表](img/v1/hero/classic.png) | ![Heritage 传承仪表](img/v1/hero/heritage.png) |
+| 陶瓷质感表圈、立体表盘与经典机械仪表的从容气质。 | 温暖的模拟仪表个性，为日常驾驶带来熟悉的怀旧感。 |
 
-| Day Mode | Night Mode (Neon) | Odometer Detail |
-| :---: | :---: | :---: |
-| ![Day](img/Day%20Mode%20Screenshot.png) | ![Night](img/Night%20Mode%20Neon%20Screenshot%20(2).png) | ![Odometer](img/Odometer%20Close-up%20Screenshot.png) |
+| Colorful 多彩 | Neon 霓虹 |
+| --- | --- |
+| ![Colorful 多彩仪表](img/v1/hero/colorful.png) | ![Neon 霓虹仪表](img/v1/hero/neon.png) |
+| 明快、亲和、轻松，为日常驾驶增加一点好心情。 | 深黑背景与发光数字，营造专注而鲜明的夜间驾驶氛围。 |
 
-### 📥 Download & Installation
+四种主题拥有不同的视觉语言，但始终坚持相同原则：速度清晰、布局平衡、减少干扰。
 
-You can download the latest beta APK from GitHub Releases:
+## 为真实道路而设计
 
-#### [👉 Click to Download NeoGauge-beta.apk](https://jianli03.github.io/NeoGauge/download/)
+- **大而清晰的速度**——可读性永远优先于装饰效果。
+- **灵敏而稳定的 GPS 显示**——兼顾平滑动态与快速减速响应。
+- **日夜配色**——适应不断变化的光线环境。
+- **横竖屏布局**——适合不同支架和使用方向。
+- **手机和平板适配**——动态间距让不同屏幕保持视觉平衡。
+- **真实道路打磨**——在日常驾驶中持续测试和改进。
 
-*Note: Please ensure your Android version is 10.0 (API 29) or higher, and grant location permissions after installation.*
+## Journey 旅程记忆
 
----
+NeoGauge 可以在本地保留距离、时长和驾驶速度等轻量旅程记录。它的目的不是为每次驾驶
+打分或生成社交内容，而是简单地记住这一天带你去过哪里。
 
-<a name="中文"></a>
-## 中文
+旅程记录仅保存在你的设备上。
 
-**NeoGauge** 是一款高性能 Android 速度计应用，融合了经典机械美学与现代“科幻霓虹”设计。灵感源自复古机车仪表与特斯拉（Tesla）的极简数字交互，旨在为驾驶者提供沉浸且独特的视觉体验。
+## 隐私设计
 
-### [🚀 访问官方演示网页 (GitHub Pages)](https://jianli03.github.io/NeoGauge/)
+NeoGauge 仅在设备本地使用位置信息计算 GPS 速度并支持 Journey 记录。
 
-### ✨ 核心特性
+- 没有广告
+- 没有分析 SDK
+- 没有用户追踪
+- 不上传位置历史
+- 不收集个人数据
 
-- **机械灵魂 (Mechanical Soul)**：精心打造的 5 位滚动里程表逻辑，精确模拟物理齿轮的级联翻转。
-- **日夜双模 (Day/Night Mode)**：
-    - **昼间模式**：高对比度设计，确保直射阳光下的清晰可读。
-    - **夜间模式**：深灰色背景配合多层光晕效果，缓解夜间驾驶视觉疲劳。
-- **智能能效管理**：
-    - **三级降功耗**：根据车辆动力学自动切换 Active (全亮) / Dimmed (节能) / Dormant (休眠) 状态。
-    - **震动唤醒**：通过加速计感知关车门或引擎启动的细微震动，瞬间点亮屏幕。
-- **全球定位兼容**：支持 Google Play 服务与原生 Android GPS 双引擎切换，完美适配中国大陆等非 GMS 设备。
-- **OLED 保护**：内置周期性像素位移 (Pixel Shifting)，有效防止屏幕产生残影。
-- **极致隐私**：无广告、无追踪、无任何数据收集，所有处理均在设备本地完成。
+详细信息请阅读[隐私政策](privacy.html)。
 
-### 📸 界面预览
+## 下载
 
-| 日间模式 | 夜间模式 (Neon) | 里程表细节 |
-| :---: | :---: | :---: |
-| ![Day](img/Day%20Mode%20Screenshot.png) | ![Night](img/Night%20Mode%20Neon%20Screenshot%20(2).png) | ![Odometer](img/Odometer%20Close-up%20Screenshot.png) |
+通过固定下载页面获取最新 Android 测试版：
 
-### 📥 下载与安装
+### [下载 NeoGauge Android 测试版](https://jianli03.github.io/NeoGauge/download/)
 
-您可以从 GitHub Releases 下载最新的测试版 APK：
+建议使用 Android 10 或更高版本。实时 GPS 速度需要位置权限。
 
-#### [👉 点击下载 NeoGauge-beta.apk](https://jianli03.github.io/NeoGauge/download/)
+> NeoGauge 仅作为辅助显示。请稳妥固定设备，驾驶时不要操作手机，并始终遵守当地交通法规。
 
-*注意：安装前请确保您的 Android 系统版本为 10.0 (API 29) 或更高，并在安装后授予位置权限。*
+## 项目说明
 
----
+本仓库包含 NeoGauge 官方网站、下载跳转、版本信息、隐私政策与免责声明。
 
-## 📜 Legal & Privacy / 法律与隐私
+- **App：** Kotlin 与 Jetpack Compose
+- **网站：** GitHub Pages 托管的静态 HTML
+- **反馈：** [GitHub Issues](https://github.com/Jianli03/NeoGauge/issues)
+- **许可证：** [MIT](LICENSE)
 
-- **Privacy Policy / 隐私政策**: We do not collect, store, or upload any of your location data. 我们不收集、不存储、不上传您的任何位置数据。[Details / 查看详情](privacy.html)
-- **Disclaimer / 免责声明**: NeoGauge is for auxiliary information purposes only. Operating mobile phones while driving is strictly prohibited; please always refer to your vehicle's original gauges. NeoGauge 仅作为辅助信息工具。驾驶时严禁操作手机，请始终以车辆原厂仪表为准。[Details / 查看详情](disclaimer.html)
-
----
-
-## 🛠️ About This Project / 关于本项目
-
-This repository is the official landing page for **NeoGauge**. 本仓库为 **NeoGauge** 的官方展示站。
-
-- **App Development**: jianl
-- **Core Source Code**: Private Repository (NeoGauge-App)
-- **UI Framework**: Jetpack Compose
-- **Support**: Please submit feedback in this project's [Issues](https://github.com/Jianli03/NeoGauge/issues) section.
-
-Developed with ❤️ for car enthusiasts.
+由 James Li 在澳大利亚墨尔本用心开发。
