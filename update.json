@@ -1,6 +1,6 @@
 {
-  "versionCode": 10,
-  "versionName": "1.0.1",
-  "updateNotes": "Improved tablet and foldable layouts across all four dashboards. Fixed overlapping Classic gauges, mechanical gauge and digital readout collisions, Neon telemetry spacing, and the Colorful speed-unit position.",
-  "downloadUrl": "https://github.com/Jianli03/NeoGauge/releases/download/v1.0.1/NeoGauge.apk"
+  "versionCode": 9,
+  "versionName": "1.0.0",
+  "updateNotes": "NeoGauge 1.0 brings four expressive dashboards, clearer GPS speed, local journey memories, and major Classic and Neon refinements. Important: uninstall the old beta before installing v1.0 because the signing certificate has changed.\n\nNeoGauge 1.0 带来四款表盘、更清晰的 GPS 速度、本地行程记忆，以及 Classic 和 Neon 的全面优化。重要：由于签名证书已经更新，请先卸载旧 beta 版本，再安装 v1.0。",
+  "downloadUrl": "https://github.com/Jianli03/NeoGauge/releases/download/v1.0.0/NeoGauge.apk"
 }
