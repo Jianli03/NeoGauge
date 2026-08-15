@@ -2,5 +2,5 @@
   "versionCode": 10,
   "versionName": "1.0.1",
   "updateNotes": "Improved tablet and foldable layouts across all four dashboards. Fixed overlapping Classic gauges, mechanical gauge and digital readout collisions, Neon telemetry spacing, and the Colorful speed-unit position.",
-  "downloadUrl": "https://github.com/Jianli03/NeoGauge/releases/download/v1.0.1/NeoGauge-1.0.1-github-release.apk"
+  "downloadUrl": "https://github.com/Jianli03/NeoGauge/releases/download/v1.0.1/NeoGauge.apk"
 }
