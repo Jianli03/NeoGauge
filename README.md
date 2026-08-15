@@ -7,7 +7,7 @@
 Four expressive dashboards · Clear GPS speed · Local journey memories
 
 [Official website](https://jianli03.github.io/NeoGauge/) ·
-[Download Android beta](https://jianli03.github.io/NeoGauge/download/) ·
+[Download for Android](https://jianli03.github.io/NeoGauge/download/) ·
 [中文介绍](#中文)
 
 </div>
@@ -64,13 +64,13 @@ records.
 - No analytics SDKs
 - No user tracking
 - No location-history uploads
-- No personal data collection
+- Optional Online Data sends current location to Open-Meteo for local weather only after consent
 
 Read the [Privacy Policy](privacy.html) for details.
 
 ## Download
 
-Download the latest Android beta from the permanent download page:
+Download the latest stable Android release from the permanent download page:
 
 ### [Download NeoGauge for Android](https://jianli03.github.io/NeoGauge/download/)
 
@@ -141,15 +141,15 @@ NeoGauge 仅在设备本地使用位置信息计算 GPS 速度并支持 Journey 
 - 没有分析 SDK
 - 没有用户追踪
 - 不上传位置历史
-- 不收集个人数据
+- 可选联网数据仅在同意后将当前位置发送给 Open-Meteo 获取当地天气
 
 详细信息请阅读[隐私政策](privacy.html)。
 
 ## 下载
 
-通过固定下载页面获取最新 Android 测试版：
+通过固定下载页面获取最新 Android 正式版：
 
-### [下载 NeoGauge Android 测试版](https://jianli03.github.io/NeoGauge/download/)
+### [下载 NeoGauge Android 正式版](https://jianli03.github.io/NeoGauge/download/)
 
 建议使用 Android 10 或更高版本。实时 GPS 速度需要位置权限。
 
